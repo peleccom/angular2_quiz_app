@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from "@angular/router";
-import {QuizService} from "../quiz.service";
-import {Quiz} from "../data-model/quiz";
+import {Quiz} from '../../data-model/quiz';
+import {QuizService} from '../../quiz.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-quiz-details',
@@ -15,7 +15,7 @@ export class QuizDetailsComponent implements OnInit {
   ngOnInit() {
   this.route.params
         // (+) converts string 'id' to a number
-        .switchMap((params: Params) => this.quizService.getQuiz(+params['id']))
+        // .map((params: Params) => this.quizService.getQuiz(+params['id']))
         .subscribe((quiz: Quiz) => this.quiz = quiz);
   }
 

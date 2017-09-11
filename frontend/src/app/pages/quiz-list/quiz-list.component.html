@@ -1,6 +1,8 @@
 <div>
     <ul *ngFor="let quiz of quizzes">
         <a [routerLink]="['/quiz', quiz.id]">{{ quiz.name }}</a>
-        <app-quiz-element [quiz]="quiz"></app-quiz-element>
+        <li>
+            <app-quiz-element [quiz]="quiz"></app-quiz-element>
+        </li>
     </ul>
 </div>

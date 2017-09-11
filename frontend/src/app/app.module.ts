@@ -5,18 +5,19 @@ import { HttpModule } from '@angular/http';
 import {MaterialModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from "@angular/router";
-import { QuizElementComponent } from './quiz-element/quiz-element.component';
-import { QuizListComponent } from './quiz-list/quiz-list.component';
-import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
 import {QuizService} from "./quiz.service";
+import {appRoutes} from './app.routes';
+import {BasicLayoutComponent} from './layouts/basic-layout/basic-layout.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {HeaderComponent} from './components/header/header.component';
+import {HomeComponent} from './pages/home/home.component';
+import {QuizListComponent} from './pages/quiz-list/quiz-list.component';
+import {QuizElementComponent} from './pages/quiz-element/quiz-element.component';
+import {QuizDetailsComponent} from './pages/quiz-details/quiz-details.component';
 
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'quiz/:id', component: QuizDetailsComponent },
-];
+
 
 
 @NgModule({
@@ -25,7 +26,10 @@ const appRoutes: Routes = [
     HomeComponent,
     QuizElementComponent,
     QuizListComponent,
-    QuizDetailsComponent
+    QuizDetailsComponent,
+    BasicLayoutComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
